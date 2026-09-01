@@ -3,7 +3,7 @@
 The repo is the official implementation for the paper: **FDER: Frequency-Decoupled Enhanced Retrieval for Long-term Time Series Forecasting**.
 <!-- 
 [[Paper]](TODO) [[Code]](https://github.com/Gardeniae/FDER)
-注释内容 -->
+ -->
 ## Introduction
 
 Long look-back windows provide rich historical contexts for long-term time series forecasting. However, longer inputs also introduce redundant information and make historical pattern matching more challenging.
@@ -126,7 +126,7 @@ FDER/
 ├── run.py                # Main entry
 └── README.md
 ```
-
+<!-- 
 ## Citation
 
 If you find this repository useful, please consider citing our work:
@@ -139,7 +139,7 @@ If you find this repository useful, please consider citing our work:
   year    = {2026}
 }
 ```
-
+-->
 ## Acknowledgement
 
 We appreciate the following repositories for their valuable codebases and experimental pipelines:
