@@ -110,66 +110,6 @@ You can specify the GPU device as follows:
 CUDA_VISIBLE_DEVICES=0 bash ./script/fder_ettm2.sh
 ```
 
-## Example Command
-
-A typical command for running FDER is:
-
-```bash
-python -u run.py \
-  --task_name long_term_forecast \
-  --is_training 1 \
-  --root_path ./datasets/ETT-small/ \
-  --data_path ETTm2.csv \
-  --model_id ETTm2_1920_96_FDER \
-  --model FDER \
-  --data ETTm2 \
-  --features M \
-  --seq_len 1920 \
-  --label_len 48 \
-  --pred_len 96 \
-  --e_layers 2 \
-  --d_layers 1 \
-  --factor 3 \
-  --enc_in 7 \
-  --dec_in 7 \
-  --c_out 7 \
-  --des 'Exp' \
-  --train_epochs 15 \
-  --learning_rate 0.005 \
-  --batch_size 32 \
-  --itr 1
-```
-
-## Important Arguments
-
-### Forecasting Arguments
-
-| Argument          | Description                            |
-| ----------------- | -------------------------------------- |
-| `--seq_len`       | Input look-back window length          |
-| `--label_len`     | Start token length                     |
-| `--pred_len`      | Forecasting horizon                    |
-| `--features`      | Forecasting setting: `M`, `S`, or `MS` |
-| `--enc_in`        | Number of input variables              |
-| `--dec_in`        | Number of decoder input variables      |
-| `--c_out`         | Number of output variables             |
-| `--train_epochs`  | Number of training epochs              |
-| `--learning_rate` | Learning rate                          |
-| `--batch_size`    | Batch size                             |
-
-### FDER-specific Arguments
-
-| Argument       | Description                                                 |
-| -------------- | ----------------------------------------------------------- |
-| `--revise_len` | Patch length used for historical refinement                 |
-| `--stride`     | Patching stride; `-1` means `revise_len // 2`               |
-| `--topk`       | Number of retrieved historical patches                      |
-| `--top_m`      | Number of top frequency bins used in the retrieval key      |
-| `--n_low`      | Number of low-frequency bins for trend modeling             |
-| `--n_dom`      | Number of dominant-frequency bins for periodic modeling     |
-| `--evt_d`      | Bottleneck dimension of the event residual adapter          |
-| `--tau_evt`    | Event-strength threshold for residual event retrieval       |
-| `--p_evt`      | Number of top residual scores used for robust event scoring |
 
 ## Repository Structure
 
